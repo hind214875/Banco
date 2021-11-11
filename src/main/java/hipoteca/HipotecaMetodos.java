@@ -23,20 +23,13 @@ public class HipotecaMetodos {
     
     private static boolean recibeDineroPedir(double dineroPedir,double sueldo,double FactorMultiplicativo){
          //calcular el sueldo bruto anual y multiplicamos con el FACTORMULTIPLICATIVO
-         double contidadresulta = sueldo * FactorMultiplicativo;
-         boolean valida=true;
-         //ver si el total pediendo de hipoteca mas que su sueldoAnual multiplicando con el Factor Multiplicativo
-         if((dineroPedir > contidadresulta)){
-             valida=false;
-         }else{
-             valida=true;
-         } 
-         return valida;
+         double contidadresulta = sueldo * FactorMultiplicativo; 
+         return (dineroPedir < contidadresulta);
     }
     
     private static boolean añosDevolverHipoteca(int añosDevuelveHipoteca,int edad){
-         return ((añosDevuelveHipoteca > 30 || añosDevuelveHipoteca < 5) || ((edad + añosDevuelveHipoteca) > 75)); 
-        
+         return ((añosDevuelveHipoteca > 30 || añosDevuelveHipoteca < 5) 
+                 || ((edad + añosDevuelveHipoteca) > 75));       
     }
 
     public static void main(String[] args) {
